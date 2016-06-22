@@ -53,6 +53,7 @@ func (h *DesireAppHandler) DesireApp(resp http.ResponseWriter, req *http.Request
 		return
 	}
 	logger.Info("request-from-cc", lager.Data{"routing_info": desiredApp.RoutingInfo})
+	logger.Info("targeting-dr", lager.Data{"label": desiredApp.Label})
 
 	envNames := []string{}
 	for _, envVar := range desiredApp.Environment {
